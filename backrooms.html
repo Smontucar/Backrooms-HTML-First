@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+<head>
+    <title>Backrooms Exploration</title>
+</head>
+<body>
+    <main>
+        <h1>Backrooms Exploration</h1>
+        <section>
+            <h2>Backroom Images</h2>
+            <p>Immerse yourself in the surreal imagery of the backrooms:</p>
+            <img src="images/Backrooms_model.jpg" alt="An eerie hallway in the backrooms." width="560" height="315">
+        </section>
+        <section>
+            <h2>The Backrooms Found Footage</h2>
+            <p>Watch the eerie found footage video of The Backrooms:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H4dGpz6cnHo" frameborder="0" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h2>Backroom Aesthetics</h2>
+            <p>Discover the unsettling characteristics that define the backrooms:</p>
+            <ul>
+                <li>Endless corridors stretching into darkness</li>
+                <li>Flickering lights casting eerie shadows</li>
+                <li>Yellowed, peeling wallpaper with an otherworldly glow</li>
+            </ul>
+            <figure>
+                <img src="images/Flickering_Lights.gif" alt="Flickering lights in a dimly lit corridor." width="560" height="315">
+                <figcaption>The backrooms are known for their <em>flickering lights</em>.</figcaption>
+            </figure>
+            <figure>
+                <img src="images/Smiler_jumpscare.gif" alt="GIF depicting smilers in the backrooms." width="560" height="315">
+                <figcaption>Listen closely and you might catch the <strong>smilers</strong> of the backrooms.</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h2>Backroom Stories</h2>
+            <p>Read the chilling accounts of explorers who ventured into the backrooms:</p>
+            <article>
+                <h3>The Endless Corridor</h3>
+                <p>As I walked deeper into the backrooms, the corridor seemed to stretch on endlessly...</p>
+                <audio controls>
+                    <source src="sound/Horror_Sound.mp4" type="audio/mp4">
+                    Your browser does not support the audio element.
+                </audio>
+            </article>
+            <article>
+                <h3>Whispers in the Void</h3>
+                <p>The whispers I heard in the backrooms were not like anything from this world...</p>
+                <audio controls>
+                    <source src="sound/Creepy_Dark_Hallway.mp4" type="audio/mp4">
+                    Your browser does not support the audio element.
+                </audio>
+            </article>
+            <section id="backroom-portal">
+                <h2><mark>Backroom Portal</mark></h2>
+                <form action="https://backroomportal.com/submit-backroom-photo">
+                    <fieldset>
+                        <legend>Have you experienced the backrooms?</legend>
+                        <label><input type="radio" name="experienced" value="yes" checked> Yes</label>
+                        <label><input type="radio" name="experienced" value="no"> No</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Share your encounter:</legend>
+                        <input type="checkbox" name="encounter" value="Eerie"> Eerie
+                        <input type="checkbox" name="encounter" value="Intriguing"> Intriguing
+                        <input type="checkbox" name="encounter" value="Unsettling"> Unsettling
+                    </fieldset>
+                    <input type="text" id="backroomphotourl" name="backroomphotourl" placeholder="backroom photo URL" required>
+                    <button type="button" id="share-button">Share</button>
+                </form>
+            </section>
+    </main>
+    <footer>
+        <p>
+            No Copyright - Sternal
+        </p>
+    </footer>
+    <script>
+        const shareButton = document.getElementById('share-button');
+
+        shareButton.addEventListener('click', () => {
+            const experiencedRadio = document.querySelector('input[name="experienced"]:checked').value;
+            const selectedEncounters = [...document.querySelectorAll('input[name="encounter"]:checked')].map(input => input.value).join(', ');
+            const backroomPhotoUrl = document.querySelector('input[name="backroomphotourl"]').value;
+
+            const modalText = `
+Have you experienced the backrooms? ${experiencedRadio}
+Share your encounter: ${selectedEncounters}
+Backroom photo URL: ${backroomPhotoUrl}
+`;
+
+            window.alert(modalText);
+        });
+    </script>
+
+    <!-- Credits for Images, GIFs, and Videos -->
+    <!--
+    Images and GIFs sourced from various creators:
+    - "Flickering Lights" GIF sourced from [Huuxloc / https://sketchfab.com/3d-models/backrooms-another-level-429f3c9ea8024f5e9bb78f6649c7bd26]
+    - "Smiler Jumpscare" GIF sourced from [Escape The Backrooms Wiki / https://escapethebackrooms.fandom.com/wiki/The_Smiler]
+    - "Backrooms Model" image sourced from [WATESub / https://www.reddit.com/r/backrooms/comments/twdsuq/backrooms_gif_blender/]
+    Videos:
+    - "Horror Sound" audio sourced from [AlihanEdits / https://www.youtube.com/watch?v=e2wnNXIvMU4]
+    - "Creepy Dark Hallway" audio sourced from [The Panda Master / https://www.youtube.com/watch?v=QEFgIcU4kAg]
+    - "The Backrooms Found Footage" video sourced from [Kane Pixels / https://www.youtube.com/watch?v=H4dGpz6cnHo]
+    -->
+</body>
+</html>
